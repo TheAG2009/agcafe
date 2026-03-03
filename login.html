@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - AG's CAFE</title>
+    <title>AG's Cafe - Login</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">☕ AG's CAFE</div>
+    <nav class="slide-down">
+        <div class="logo pulse">☕ AG's Cafe</div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="login.html" id="login-link">Login</a></li>
-            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="login.html" class="nav-link active">Login</a></li>
+            <li><a href="cart.html" class="nav-link cart-icon">Cart (<span id="cart-count">0</span>)</a></li>
         </ul>
-        <div id="user-greeting" class="user-greeting"></div>
+        <div id="user-greeting" class="user-greeting glow"></div>
     </nav>
 
-    <main class="login-container">
+    <main class="login-container zoom-in">
         <h2>Member Login</h2>
         <p>Use any email/password to simulate login.</p>
-        <form id="login-form">
-            <div class="form-group">
+        <form id="login-form" class="fade-in">
+            <div class="form-group slide-in-left">
                 <label for="email">Email:</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" required class="input-glow">
             </div>
-            <div class="form-group">
+            <div class="form-group slide-in-right">
                 <label for="password">Password:</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password" required class="input-glow">
             </div>
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn btn-primary pulse">Login</button>
         </form>
-        <p id="login-message"></p>
+        <p id="login-message" class="fade-in"></p>
     </main>
 
-    <footer>
-        <p>&copy; 2025 AG's CAFE. All rights reserved.</p>
+    <footer class="fade-in">
+        <p>&copy; 2025 AG's Cafe. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
