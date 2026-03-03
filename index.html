@@ -3,52 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AG's CAFE - Home</title>
+    <title>AG's Cafe - Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">☕ AG's CAFE</div>
-        <ul id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="login.html" id="login-link">Login</a></li>
-            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+    <!-- Navbar with slide-down animation -->
+    <nav class="slide-down">
+        <div class="logo pulse">☕ AG's Cafe</div>
+        <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="login.html" class="nav-link" id="login-link">Login</a></li>
+            <li><a href="cart.html" class="nav-link cart-icon">Cart (<span id="cart-count">0</span>)</a></li>
         </ul>
-        <div id="user-greeting" class="user-greeting"></div>
+        <div id="user-greeting" class="user-greeting glow"></div>
     </nav>
 
-    <header class="hero">
-        <h1>Welcome to AG's CAFE</h1>
-        <p>Pure vegetarian delights brewed with love.</p>
-        <a href="menu.html" class="btn">View Menu</a>
-        <a href="login.html" id="hero-login" class="btn btn-outline">Login to Order</a>
-        <a href="menu.html" id="hero-order" class="btn btn-primary" style="display: none;">Order Now</a>
+    <!-- Hero Section with parallax and fade-in -->
+    <header class="hero parallax">
+        <div class="hero-content fade-in">
+            <h1 class="text-pop-up">Welcome to AG's Cafe</h1>
+            <p class="slide-in-right">Pure vegetarian delights brewed with love.</p>
+            <div class="hero-buttons">
+                <a href="menu.html" class="btn btn-primary pulse">View Menu</a>
+                <a href="login.html" id="hero-login" class="btn btn-outline">Login to Order</a>
+                <a href="menu.html" id="hero-order" class="btn btn-primary" style="display: none;">Order Now</a>
+            </div>
+        </div>
     </header>
 
+    <!-- Features Section with staggered cards -->
     <section class="features">
-        <h2>Our Specialties</h2>
-        <div class="feature-grid">
-            <div class="feature">
-                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Coffee">
+        <h2 class="section-title">Our Specialties</h2>
+        <div class="feature-grid stagger-children">
+            <div class="feature card-hover">
+                <div class="image-zoom">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Coffee">
+                </div>
                 <h3>Fresh Brewed Coffee</h3>
                 <p>Start your day with our signature filter coffee.</p>
             </div>
-            <div class="feature">
-                <img src="https://images.unsplash.com/photo-1601050690597-df0568f7a1f1?w=400" alt="Samosa">
+            <div class="feature card-hover">
+                <div class="image-zoom">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f7a1f1?w=400" alt="Samosa">
+                </div>
                 <h3>Delicious Snacks</h3>
                 <p>Samosa, vada pav, and more – all veg.</p>
             </div>
-            <div class="feature">
-                <img src="https://images.unsplash.com/photo-1589119908995-c6837a148b2b?w=400" alt="Gulab Jamun">
+            <div class="feature card-hover">
+                <div class="image-zoom">
+                    <img src="https://images.unsplash.com/photo-1589119908995-c6837a148b2b?w=400" alt="Gulab Jamun">
+                </div>
                 <h3>Heavenly Desserts</h3>
                 <p>Gulab jamun, jalebi, and ice creams.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 AG's CAFE. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="fade-in">
+        <p>&copy; 2025 AG's Cafe. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
