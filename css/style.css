@@ -51,6 +51,8 @@ nav a:hover {
 .user-greeting {
     color: #ffd966;
     font-weight: bold;
+    margin-left: auto;
+    padding-right: 1rem;
 }
 
 /* Main content */
@@ -70,11 +72,13 @@ main {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
 }
 
 /* Buttons */
@@ -87,13 +91,15 @@ main {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 1rem;
     margin: 0.3rem;
 }
 
 .btn:hover {
     background: #a5714b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .btn-outline {
@@ -135,12 +141,22 @@ main {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
 }
 
 .feature img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.feature:hover img {
+    transform: scale(1.05);
 }
 
 .feature h3 {
@@ -185,9 +201,15 @@ main {
     outline: none;
 }
 
+.form-group input:focus {
+    border-color: #a5714b;
+    box-shadow: 0 0 5px rgba(165,113,75,0.5);
+}
+
 #login-message {
     margin-top: 1rem;
     color: green;
+    font-weight: bold;
 }
 
 /* Menu Page */
@@ -218,6 +240,12 @@ main {
     padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .menu-item img {
@@ -247,11 +275,13 @@ main {
     padding: 0.5rem 1rem;
     border-radius: 25px;
     cursor: pointer;
+    transition: all 0.3s ease;
     margin-top: 0.5rem;
 }
 
 .menu-item button:hover {
     background: #6b4226;
+    transform: scale(1.05);
 }
 
 /* Cart Page */
@@ -266,6 +296,18 @@ main {
     gap: 1rem;
     border-bottom: 1px solid #ddd;
     padding: 1rem 0;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .cart-item img {
@@ -298,6 +340,12 @@ main {
     border-radius: 50%;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.2s;
+}
+
+.cart-item-actions button:hover {
+    background: #a5714b;
+    transform: scale(1.1);
 }
 
 .cart-item-actions button.remove {
@@ -318,6 +366,7 @@ main {
     background: #4e2e1e;
     border-radius: 50px;
     font-size: 1.2rem;
+    margin-top: 1rem;
 }
 
 /* Payment Section */
@@ -326,6 +375,7 @@ main {
     justify-content: center;
     gap: 1rem;
     margin: 1rem 0;
+    flex-wrap: wrap;
 }
 
 #qr-section, #cash-message {
@@ -334,6 +384,12 @@ main {
     padding: 1rem;
     background: #fff3e0;
     border-radius: 15px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Login Popup */
@@ -427,7 +483,7 @@ main {
     background: #6b4226;
 }
 
-.popup-cancel { 
+.popup-cancel {
     background: #ccc;
     color: #333;
     border: none;
