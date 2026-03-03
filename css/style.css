@@ -1,4 +1,4 @@
-/* ========== RESET & BASE ========== */
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -13,28 +13,9 @@ body {
     display: flex;
     flex-direction: column;
     background: #fef9e7;
-    overflow-x: hidden;
 }
 
-/* ========== CUSTOM SCROLLBAR ========== */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #c49a6c;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #a5714b;
-}
-
-/* ========== NAVIGATION ANIMATIONS ========== */
+/* Navigation */
 nav {
     background: #4e2e1e;
     color: white;
@@ -43,46 +24,12 @@ nav {
     align-items: center;
     padding: 1rem 2rem;
     flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.slide-down {
-    animation: slideDown 0.8s ease;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 1px;
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 nav ul {
@@ -94,36 +41,11 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
+    transition: color 0.3s ease;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #ffd966;
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.nav-link:hover {
+nav a:hover {
     color: #ffd966;
-    transform: translateY(-2px);
-}
-
-.active {
-    color: #ffd966;
-}
-
-.active::after {
-    width: 100%;
 }
 
 .user-greeting {
@@ -131,80 +53,18 @@ nav a {
     font-weight: bold;
 }
 
-.glow {
-    animation: glow 2s ease-in-out infinite;
+/* Main content */
+main {
+    flex: 1;
+    padding: 2rem;
 }
 
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px rgba(255, 217, 102, 0.5);
-    }
-    50% {
-        text-shadow: 0 0 20px rgba(255, 217, 102, 0.8);
-    }
-    100% {
-        text-shadow: 0 0 5px rgba(255, 217, 102, 0.5);
-    }
-}
-
-/* ========== HERO SECTION ANIMATIONS ========== */
+/* Hero Section */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200') center/cover;
     color: white;
     text-align: center;
     padding: 5rem 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.parallax {
-    background-attachment: fixed;
-}
-
-.fade-in {
-    animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.text-pop-up {
-    animation: textPopUp 0.8s ease;
-}
-
-@keyframes textPopUp {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    80% {
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.slide-in-right {
-    animation: slideInRight 1s ease;
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 
 .hero h1 {
@@ -217,7 +77,7 @@ nav a {
     margin-bottom: 2rem;
 }
 
-/* ========== BUTTON ANIMATIONS ========== */
+/* Buttons */
 .btn {
     display: inline-block;
     background: #c49a6c;
@@ -227,39 +87,13 @@ nav a {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
     font-size: 1rem;
     margin: 0.3rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.btn:hover::before {
-    width: 300px;
-    height: 300px;
 }
 
 .btn:hover {
     background: #a5714b;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.btn:active {
-    transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -272,39 +106,20 @@ nav a {
     color: #4e2e1e;
 }
 
-/* ========== FEATURES SECTION ANIMATIONS ========== */
+.btn-primary {
+    background: #d4a373;
+}
+
+/* Features Section */
 .features {
     padding: 3rem 2rem;
     text-align: center;
 }
 
-.section-title {
+.features h2 {
     margin-bottom: 2rem;
     font-size: 2rem;
     color: #4e2e1e;
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: #c49a6c;
-    animation: lineGrow 1s ease;
-}
-
-@keyframes lineGrow {
-    from {
-        width: 0;
-    }
-    to {
-        width: 50px;
-    }
 }
 
 .feature-grid {
@@ -315,67 +130,17 @@ nav a {
     margin: 0 auto;
 }
 
-.stagger-children > * {
-    animation: fadeInUp 0.6s ease forwards;
-    opacity: 0;
-}
-
-.stagger-children > *:nth-child(1) {
-    animation-delay: 0.1s;
-}
-.stagger-children > *:nth-child(2) {
-    animation-delay: 0.3s;
-}
-.stagger-children > *:nth-child(3) {
-    animation-delay: 0.5s;
-}
-.stagger-children > *:nth-child(4) {
-    animation-delay: 0.7s;
-}
-.stagger-children > *:nth-child(5) {
-    animation-delay: 0.9s;
-}
-.stagger-children > *:nth-child(6) {
-    animation-delay: 1.1s;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .feature {
     background: #fff3e0;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
 }
 
-.card-hover:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.image-zoom {
-    overflow: hidden;
-}
-
-.image-zoom img {
+.feature img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.image-zoom:hover img {
-    transform: scale(1.1);
 }
 
 .feature h3 {
@@ -387,7 +152,7 @@ nav a {
     padding: 0 1rem 1rem;
 }
 
-/* ========== LOGIN FORM ANIMATIONS ========== */
+/* Login Form */
 .login-container {
     max-width: 400px;
     margin: 2rem auto;
@@ -397,34 +162,9 @@ nav a {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.zoom-in {
-    animation: zoomIn 0.6s ease;
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.slide-in-left {
-    animation: slideInLeft 0.6s ease;
-}
-
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+.login-container h2 {
+    margin-bottom: 1rem;
+    color: #4e2e1e;
 }
 
 .form-group {
@@ -443,25 +183,24 @@ nav a {
     border: 1px solid #c49a6c;
     border-radius: 25px;
     outline: none;
-    transition: all 0.3s ease;
-}
-
-.input-glow:focus {
-    border-color: #a5714b;
-    box-shadow: 0 0 10px rgba(165, 113, 75, 0.5);
-    transform: scale(1.02);
 }
 
 #login-message {
     margin-top: 1rem;
     color: green;
-    font-weight: bold;
 }
 
-/* ========== MENU PAGE ANIMATIONS ========== */
+/* Menu Page */
 .menu-page {
     padding: 2rem;
     min-height: 500px;
+}
+
+.menu-page h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4e2e1e;
+    font-size: 2rem;
 }
 
 .menu-items {
@@ -479,46 +218,24 @@ nav a {
     padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    opacity: 0;
-    animation: fadeInScale 0.5s ease forwards;
-}
-
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.menu-item:nth-child(odd) {
-    animation-delay: 0.1s;
-}
-
-.menu-item:nth-child(even) {
-    animation-delay: 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .menu-item:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
 }
 
-.menu-item img {
+.menu-item .item-icon {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 150px;
+    background: #f0e6d8;
     border-radius: 8px;
     margin-bottom: 1rem;
-    transition: all 0.5s ease;
-}
-
-.menu-item:hover img {
-    transform: scale(1.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #c49a6c;
 }
 
 .menu-item h3 {
@@ -531,21 +248,6 @@ nav a {
     color: #c49a6c;
     font-size: 1.2rem;
     margin: 0.5rem 0;
-    display: inline-block;
-    animation: pricePulse 2s infinite;
-}
-
-@keyframes pricePulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-        color: #a5714b;
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 .menu-item button {
@@ -555,36 +257,15 @@ nav a {
     padding: 0.5rem 1rem;
     border-radius: 25px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s;
     margin-top: 0.5rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.menu-item button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.menu-item button:hover::before {
-    width: 300px;
-    height: 300px;
 }
 
 .menu-item button:hover {
     background: #6b4226;
-    transform: scale(1.05);
 }
 
-/* ========== CART PAGE ANIMATIONS ========== */
+/* Cart Page */
 .cart-page {
     max-width: 800px;
     margin: 0 auto;
@@ -596,30 +277,18 @@ nav a {
     gap: 1rem;
     border-bottom: 1px solid #ddd;
     padding: 1rem 0;
-    animation: slideInCart 0.4s ease;
 }
 
-@keyframes slideInCart {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.cart-item img {
+.cart-item-icon {
     width: 80px;
     height: 80px;
-    object-fit: cover;
+    background: #f0e6d8;
     border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.cart-item:hover img {
-    transform: rotate(5deg) scale(1.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #c49a6c;
 }
 
 .cart-item-details {
@@ -645,12 +314,6 @@ nav a {
     border-radius: 50%;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.2s ease;
-}
-
-.cart-item-actions button:hover {
-    background: #a5714b;
-    transform: scale(1.2);
 }
 
 .cart-item-actions button.remove {
@@ -663,19 +326,6 @@ nav a {
     margin: 1rem 0;
     font-size: 1.3rem;
     color: #4e2e1e;
-    animation: totalPop 0.5s ease;
-}
-
-@keyframes totalPop {
-    0% {
-        transform: scale(0.8);
-    }
-    80% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 #checkout-btn {
@@ -684,31 +334,15 @@ nav a {
     background: #4e2e1e;
     border-radius: 50px;
     font-size: 1.2rem;
-    margin-top: 1rem;
 }
 
-/* ========== PAYMENT SECTION ANIMATIONS ========== */
+/* Payment Section */
 .payment-options {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin: 1rem 0;
     flex-wrap: wrap;
-}
-
-.rotate-in {
-    animation: rotateIn 0.6s ease;
-}
-
-@keyframes rotateIn {
-    from {
-        opacity: 0;
-        transform: rotate(-180deg) scale(0.3);
-    }
-    to {
-        opacity: 1;
-        transform: rotate(0) scale(1);
-    }
 }
 
 #qr-section, #cash-message {
@@ -719,7 +353,7 @@ nav a {
     border-radius: 15px;
 }
 
-/* ========== LOGIN POPUP ANIMATIONS ========== */
+/* Login Popup */
 .login-popup {
     display: none;
     position: fixed;
@@ -731,8 +365,6 @@ nav a {
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(5px);
-    animation: fadeIn 0.3s ease;
 }
 
 .popup-content {
@@ -741,22 +373,7 @@ nav a {
     padding: 20px;
     max-width: 400px;
     width: 90%;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    animation: popupBounce 0.5s ease;
-}
-
-@keyframes popupBounce {
-    0% {
-        opacity: 0;
-        transform: scale(0.3) translateY(-100px);
-    }
-    50% {
-        transform: scale(1.05) translateY(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
 }
 
 .popup-header {
@@ -779,12 +396,11 @@ nav a {
     font-size: 24px;
     cursor: pointer;
     color: #999;
-    transition: all 0.3s;
+    transition: color 0.3s;
 }
 
 .close-popup:hover {
     color: #333;
-    transform: rotate(90deg);
 }
 
 .popup-body {
@@ -809,12 +425,11 @@ nav a {
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background 0.3s;
 }
 
 .popup-login:hover {
     background: #6b4226;
-    transform: scale(1.05);
 }
 
 .popup-cancel {
@@ -824,59 +439,18 @@ nav a {
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background 0.3s;
 }
 
 .popup-cancel:hover {
     background: #999;
-    transform: scale(1.05);
 }
 
-/* ========== FOOTER ========== */
+/* Footer */
 footer {
     background: #4e2e1e;
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-}
-
-/* ========== LOADING ANIMATIONS ========== */
-@keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-    100% {
-        background-position: 1000px 0;
-    }
-}
-
-.loading {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 1000px 100%;
-    animation: shimmer 2s infinite;
-}
-
-/* ========== RESPONSIVE ANIMATIONS ========== */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .parallax {
-        background-attachment: scroll;
-    }
-    
-    .menu-item {
-        animation: fadeIn 0.5s ease;
-    }
-    
-    .cart-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .cart-item-actions {
-        justify-content: center;
-    }
 }
