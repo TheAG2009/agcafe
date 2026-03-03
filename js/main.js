@@ -1,17 +1,21 @@
-// ========== Global Variables ==========
+// ========== GLOBAL VARIABLES ==========
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let loggedInUser = localStorage.getItem('loggedInUser') || null;
 
-// ========== Update Cart Count ==========
+// ========== UPDATE CART COUNT ==========
 function updateCartCount() {
     const countEl = document.getElementById('cart-count');
     if (countEl) {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         countEl.textContent = totalItems;
+        
+        // Add bounce animation when cart updates
+        countEl.classList.add('pulse');
+        setTimeout(() => countEl.classList.remove('pulse'), 500);
     }
 }
 
-// ========== Menu Items Data (50+ Items with REAL Images) ==========
+// ========== MENU ITEMS DATA (50+ Items) ==========
 const menuItems = [
     // Dosa Varieties
     { id: 1, name: 'Masala Dosa', description: 'Crispy dosa with potato filling', price: 70, image: 'https://images.unsplash.com/photo-1589301760015-d2a2edb43ee0?w=400' },
@@ -86,7 +90,7 @@ const menuItems = [
     { id: 50, name: 'Badam Milk', description: 'Rich almond milk', price: 40, image: 'https://images.unsplash.com/photo-1579632652768-453cb5f7f6b9?w=400' }
 ];
 
-// ========== Load Menu Items ==========
+// ========== LOAD MENU ITEMS ==========
 document.addEventListener('DOMContentLoaded', function() {
     // Load menu on menu.html
     if (document.querySelector('.menu-page')) {
@@ -97,7 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'menu-item';
                 itemDiv.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" loading="lazy">
+                    <div class="image-zoom">
+                        <img src="${item.image}" alt="${item.name}" loading="lazy">
+                    </div>
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
                     <p class="price">₹${item.price}</p>
@@ -118,7 +124,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else {
                         addToCart(item);
                         e.target.textContent = '✓ Added';
-                        setTimeout(() => e.target.textContent = 'Add to Cart', 1000);
+                        e.target.style.background = '#4CAF50';
+                        setTimeout(() => {
+                            e.target.textContent = 'Add to Cart';
+                            e.target.style.background = '#4e2e1e';
+                        }, 1000);
                     }
                 });
             });
@@ -133,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ========== Login Popup Function ==========
+// ========== LOGIN POPUP FUNCTION ==========
 function showLoginPopup(item) {
     let popup = document.getElementById('login-popup');
     
@@ -144,7 +154,7 @@ function showLoginPopup(item) {
         popup.innerHTML = `
             <div class="popup-content">
                 <div class="popup-header">
-                    <h3>Login Required</h3>
+                    <h3>🔐 Login Required</h3>
                     <button class="close-popup">&times;</button>
                 </div>
                 <div class="popup-body">
@@ -163,11 +173,13 @@ function showLoginPopup(item) {
         const loginBtn = popup.querySelector('.popup-login');
         
         closeBtn.addEventListener('click', () => {
-            popup.remove();
+            popup.style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => popup.remove(), 300);
         });
         
         cancelBtn.addEventListener('click', () => {
-            popup.remove();
+            popup.style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => popup.remove(), 300);
         });
         
         loginBtn.addEventListener('click', () => {
@@ -179,18 +191,35 @@ function showLoginPopup(item) {
     popup.style.display = 'flex';
 }
 
-// ========== Check for pending item after login ==========
+// ========== CHECK FOR PENDING ITEM ==========
 function checkPendingItem() {
     const pendingItem = sessionStorage.getItem('pendingItem');
     if (pendingItem) {
         const item = JSON.parse(pendingItem);
         addToCart(item);
         sessionStorage.removeItem('pendingItem');
-        alert(`${item.name} added to cart!`);
+        
+        // Show success toast
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.textContent = `${item.name} added to cart!`;
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            animation: slideInRight 0.3s ease;
+            z-index: 1000;
+        `;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
     }
 }
 
-// ========== Cart Functions ==========
+// ========== CART FUNCTIONS ==========
 function addToCart(item) {
     const existing = cart.find(cartItem => cartItem.id === item.id);
     if (existing) {
@@ -223,7 +252,7 @@ function updateQuantity(id, change) {
     }
 }
 
-// ========== Display Cart Items ==========
+// ========== DISPLAY CART ITEMS ==========
 function displayCartItems() {
     const cartContainer = document.getElementById('cart-items');
     const totalSpan = document.getElementById('cart-total');
@@ -231,7 +260,7 @@ function displayCartItems() {
 
     cartContainer.innerHTML = '';
     if (cart.length === 0) {
-        cartContainer.innerHTML = '<p style="text-align:center;">Your cart is empty.</p>';
+        cartContainer.innerHTML = '<p style="text-align:center; animation: fadeIn 0.5s;">Your cart is empty.</p>';
         if (totalSpan) totalSpan.textContent = '0';
         return;
     }
@@ -270,7 +299,7 @@ function displayCartItems() {
     });
 }
 
-// ========== Checkout & Payment ==========
+// ========== CHECKOUT & PAYMENT ==========
 if (document.getElementById('checkout-btn')) {
     const checkoutBtn = document.getElementById('checkout-btn');
     const paymentSection = document.getElementById('payment-section');
@@ -294,6 +323,7 @@ if (document.getElementById('checkout-btn')) {
         
         paymentSection.style.display = 'block';
         checkoutBtn.style.display = 'none';
+        paymentSection.scrollIntoView({ behavior: 'smooth' });
     });
 
     paymentBtns.forEach(btn => {
@@ -312,14 +342,14 @@ if (document.getElementById('checkout-btn')) {
                     paymentSection.style.display = 'none';
                     checkoutBtn.style.display = 'block';
                     cashMessage.style.display = 'none';
-                    alert('Thank you! Please pay at the counter.');
+                    alert('🎉 Thank you! Please pay at the counter.');
                 }, 2000);
             } else {
                 qrSection.style.display = 'block';
                 const total = document.getElementById('cart-total').textContent;
                 const qrImg = qrSection.querySelector('img');
-                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=agscafe@okhdfcbank&pn=AG%27s%20CAFE&am=${total}&cu=INR`;
-                thankyouMsg.textContent = 'Thank you! After payment, your order will be prepared.';
+                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=agscafe@okhdfcbank&pn=AG%27s%20Cafe&am=${total}&cu=INR`;
+                thankyouMsg.textContent = '✅ Thank you! After payment, your order will be prepared.';
                 setTimeout(() => {
                     cart = [];
                     localStorage.setItem('cart', JSON.stringify(cart));
@@ -328,14 +358,14 @@ if (document.getElementById('checkout-btn')) {
                     paymentSection.style.display = 'none';
                     checkoutBtn.style.display = 'block';
                     qrSection.style.display = 'none';
-                    alert('Payment successful! Thank you.');
+                    alert('🎉 Payment successful! Thank you.');
                 }, 5000);
             }
         });
     });
 }
 
-// ========== Login Simulation ==========
+// ========== LOGIN SIMULATION ==========
 if (document.getElementById('login-form')) {
     document.getElementById('login-form').addEventListener('submit', (e) => {
         e.preventDefault();
@@ -345,7 +375,7 @@ if (document.getElementById('login-form')) {
         if (email && password) {
             const name = email.split('@')[0];
             localStorage.setItem('loggedInUser', name);
-            document.getElementById('login-message').textContent = 'Login successful! Redirecting...';
+            document.getElementById('login-message').textContent = '✅ Login successful! Redirecting...';
             
             setTimeout(() => {
                 const pendingItem = sessionStorage.getItem('pendingItem');
@@ -361,7 +391,7 @@ if (document.getElementById('login-form')) {
     });
 }
 
-// ========== Update UI Based on Login State ==========
+// ========== UPDATE UI BASED ON LOGIN STATE ==========
 function updateUIForLogin() {
     const user = localStorage.getItem('loggedInUser');
     const loginLink = document.getElementById('login-link');
@@ -373,7 +403,7 @@ function updateUIForLogin() {
         if (loginLink) loginLink.style.display = 'none';
         if (userGreeting) {
             userGreeting.style.display = 'block';
-            userGreeting.textContent = `Welcome, ${user}!`;
+            userGreeting.textContent = `👋 Welcome, ${user}!`;
         }
         if (heroLogin) heroLogin.style.display = 'none';
         if (heroOrder) heroOrder.style.display = 'inline-block';
@@ -385,11 +415,21 @@ function updateUIForLogin() {
     }
 }
 
-// ========== Check for pending item on menu page load ==========
+// ========== CHECK FOR PENDING ITEM ==========
 if (document.querySelector('.menu-page')) {
     checkPendingItem();
 }
 
-// ========== Initialise ==========
+// ========== INITIALISE ==========
 updateCartCount();
 updateUIForLogin();
+
+// ========== ADD SMOOTH SCROLLING ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
