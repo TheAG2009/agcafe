@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - AG's CAFE</title>
+    <title>AG's Cafe - Menu</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">☕ AG's CAFE</div>
+    <nav class="slide-down">
+        <div class="logo pulse">☕ AG's Cafe</div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="login.html" id="login-link">Login</a></li>
-            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="menu.html" class="nav-link active">Menu</a></li>
+            <li><a href="login.html" class="nav-link" id="login-link">Login</a></li>
+            <li><a href="cart.html" class="nav-link cart-icon">Cart (<span id="cart-count">0</span>)</a></li>
         </ul>
-        <div id="user-greeting" class="user-greeting"></div>
+        <div id="user-greeting" class="user-greeting glow"></div>
     </nav>
 
     <main class="menu-page">
-        <h2>Our Pure Veg Menu</h2>
+        <h2 class="section-title text-pop-up">Our Pure Veg Menu</h2>
         <div class="menu-items" id="menu-items">
-            <!-- Menu items loaded by JavaScript -->
+            <!-- Menu items loaded by JavaScript with staggered animation -->
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 AG's CAFE. All rights reserved.</p>
+    <footer class="fade-in">
+        <p>&copy; 2025 AG's Cafe. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
