@@ -11,79 +11,79 @@ function updateCartCount() {
     }
 }
 
-// ========== MENU ITEMS DATA (EXACT NAME MATCHING PHOTOS) ==========
+// ========== MENU ITEMS DATA (WITH ICON EMOJIS) ==========
 const menuItems = [
-    // ----- DOSA VARIETIES (All Dosa photos) -----
-    { id: 1, name: 'Masala Dosa', description: 'Crispy dosa with potato filling', price: 70, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 2, name: 'Mysore Masala Dosa', description: 'Dosa with red chutney', price: 80, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 3, name: 'Cheese Dosa', description: 'Dosa loaded with cheese', price: 90, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 4, name: 'Onion Dosa', description: 'Dosa with caramelized onions', price: 75, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 5, name: 'Rava Dosa', description: 'Crispy semolina dosa', price: 80, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 6, name: 'Set Dosa', description: 'Soft spongy dosa (2 pcs)', price: 70, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Dosa Varieties
+    { id: 1, name: 'Masala Dosa', description: 'Crispy dosa with potato filling', price: 70, icon: '🥞' },
+    { id: 2, name: 'Mysore Masala Dosa', description: 'Dosa with red chutney', price: 80, icon: '🥞' },
+    { id: 3, name: 'Cheese Dosa', description: 'Dosa loaded with cheese', price: 90, icon: '🥞' },
+    { id: 4, name: 'Onion Dosa', description: 'Dosa with caramelized onions', price: 75, icon: '🥞' },
+    { id: 5, name: 'Rava Dosa', description: 'Crispy semolina dosa', price: 80, icon: '🥞' },
+    { id: 6, name: 'Set Dosa', description: 'Soft spongy dosa (2 pcs)', price: 70, icon: '🥞' },
     
-    // ----- IDLI & VADA (Idli/Vada photos) -----
-    { id: 7, name: 'Idli', description: 'Soft rice cakes (2 pcs)', price: 40, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 8, name: 'Rava Idli', description: 'Semolina idlis', price: 50, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 9, name: 'Medu Vada', description: 'Crispy lentil donuts (2 pcs)', price: 50, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 10, name: 'Sambar Vada', description: 'Vada dipped in sambar', price: 60, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Idli & Vada
+    { id: 7, name: 'Idli', description: 'Soft rice cakes (2 pcs)', price: 40, icon: '🍚' },
+    { id: 8, name: 'Rava Idli', description: 'Semolina idlis', price: 50, icon: '🍚' },
+    { id: 9, name: 'Medu Vada', description: 'Crispy lentil donuts (2 pcs)', price: 50, icon: '🍩' },
+    { id: 10, name: 'Sambar Vada', description: 'Vada dipped in sambar', price: 60, icon: '🍩' },
     
-    // ----- CHAAT (Pani Puri/Chaat photos) -----
-    { id: 11, name: 'Pani Puri', description: '6 pcs with spicy water', price: 40, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 12, name: 'Bhel Puri', description: 'Puffed rice snack', price: 45, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 13, name: 'Sev Puri', description: 'Crispy puris with chutney', price: 50, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 14, name: 'Dahi Puri', description: 'Puri with curd and chutney', price: 55, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 15, name: 'Samosa', description: 'Crispy potato samosa (2 pcs)', price: 30, image: 'https://images.pexels.com/photos/10570248/pexels-photo-10570248.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 16, name: 'Vada Pav', description: 'Mumbai style burger', price: 25, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Chaat
+    { id: 11, name: 'Pani Puri', description: '6 pcs with spicy water', price: 40, icon: '🥘' },
+    { id: 12, name: 'Bhel Puri', description: 'Puffed rice snack', price: 45, icon: '🥘' },
+    { id: 13, name: 'Sev Puri', description: 'Crispy puris with chutney', price: 50, icon: '🥘' },
+    { id: 14, name: 'Dahi Puri', description: 'Puri with curd and chutney', price: 55, icon: '🥘' },
+    { id: 15, name: 'Samosa', description: 'Crispy potato samosa (2 pcs)', price: 30, icon: '🥟' },
+    { id: 16, name: 'Vada Pav', description: 'Mumbai style burger', price: 25, icon: '🍔' },
     
-    // ----- SOUTH INDIAN RICE (Rice bowl photos) -----
-    { id: 17, name: 'Puliyogare', description: 'Tamarind rice', price: 60, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 18, name: 'Tomato Rice', description: 'Rice with tomato masala', price: 65, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 19, name: 'Coconut Rice', description: 'Rice with fresh coconut', price: 60, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 20, name: 'Lemon Rice', description: 'Tangy lemon rice', price: 55, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 21, name: 'Curd Rice', description: 'South Indian comfort food', price: 50, image: 'https://images.pexels.com/photos/16407742/pexels-photo-16407742/free-photo-of-idli-with-chutney-and-sambar.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // South Indian Rice
+    { id: 17, name: 'Puliyogare', description: 'Tamarind rice', price: 60, icon: '🍛' },
+    { id: 18, name: 'Tomato Rice', description: 'Rice with tomato masala', price: 65, icon: '🍛' },
+    { id: 19, name: 'Coconut Rice', description: 'Rice with fresh coconut', price: 60, icon: '🍛' },
+    { id: 20, name: 'Lemon Rice', description: 'Tangy lemon rice', price: 55, icon: '🍛' },
+    { id: 21, name: 'Curd Rice', description: 'South Indian comfort food', price: 50, icon: '🍛' },
     
-    // ----- CHINESE (Noodles/Fried Rice photos) -----
-    { id: 22, name: 'Veg Noodles', description: 'Hakka noodles with veggies', price: 80, image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 23, name: 'Schezwan Noodles', description: 'Spicy noodles', price: 90, image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 24, name: 'Veg Fried Rice', description: 'Classic fried rice', price: 80, image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 25, name: 'Schezwan Rice', description: 'Spicy fried rice', price: 90, image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 26, name: 'Gobi Manchurian', description: 'Cauliflower in manchurian sauce', price: 85, image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 27, name: 'Chilli Paneer', description: 'Crispy paneer in chilli sauce', price: 95, image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Chinese
+    { id: 22, name: 'Veg Noodles', description: 'Hakka noodles with veggies', price: 80, icon: '🍜' },
+    { id: 23, name: 'Schezwan Noodles', description: 'Spicy noodles', price: 90, icon: '🍜' },
+    { id: 24, name: 'Veg Fried Rice', description: 'Classic fried rice', price: 80, icon: '🍚' },
+    { id: 25, name: 'Schezwan Rice', description: 'Spicy fried rice', price: 90, icon: '🍚' },
+    { id: 26, name: 'Gobi Manchurian', description: 'Cauliflower in manchurian sauce', price: 85, icon: '🥦' },
+    { id: 27, name: 'Chilli Paneer', description: 'Crispy paneer in chilli sauce', price: 95, icon: '🧀' },
     
-    // ----- PUNJABI (Curry/Indian bread photos) -----
-    { id: 28, name: 'Chole Bhature', description: 'Spicy chickpeas with fried bread', price: 100, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 29, name: 'Paneer Tikka', description: 'Grilled paneer with spices', price: 110, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 30, name: 'Dal Makhani', description: 'Creamy black lentils', price: 90, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 31, name: 'Butter Naan', description: 'Soft naan with butter', price: 35, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Punjabi
+    { id: 28, name: 'Chole Bhature', description: 'Spicy chickpeas with fried bread', price: 100, icon: '🍛' },
+    { id: 29, name: 'Paneer Tikka', description: 'Grilled paneer with spices', price: 110, icon: '🍢' },
+    { id: 30, name: 'Dal Makhani', description: 'Creamy black lentils', price: 90, icon: '🍲' },
+    { id: 31, name: 'Butter Naan', description: 'Soft naan with butter', price: 35, icon: '🫓' },
     
-    // ----- GUJARATI (Gujarati snacks photos) -----
-    { id: 32, name: 'Khaman Dhokla', description: 'Soft steamed snack', price: 50, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 33, name: 'Khandvi', description: 'Rolled gram flour snack', price: 55, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 34, name: 'Thepla', description: 'Spiced fenugreek flatbread', price: 40, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Gujarati
+    { id: 32, name: 'Khaman Dhokla', description: 'Soft steamed snack', price: 50, icon: '🍰' },
+    { id: 33, name: 'Khandvi', description: 'Rolled gram flour snack', price: 55, icon: '🥨' },
+    { id: 34, name: 'Thepla', description: 'Spiced fenugreek flatbread', price: 40, icon: '🫓' },
     
-    // ----- MAHARASHTRIAN (Maharashtrian snacks photos) -----
-    { id: 35, name: 'Misal Pav', description: 'Sprouted curry with pav', price: 70, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 36, name: 'Pav Bhaji', description: 'Buttered pav with mixed veg', price: 80, image: 'https://images.pexels.com/photos/16244876/pexels-photo-16244876/free-photo-of-pani-puri-with-spiced-water.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 37, name: 'Sabudana Khichdi', description: 'Tapioca pearls with peanuts', price: 60, image: 'https://images.pexels.com/photos/9418699/pexels-photo-9418699.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Maharashtrian
+    { id: 35, name: 'Misal Pav', description: 'Sprouted curry with pav', price: 70, icon: '🍛' },
+    { id: 36, name: 'Pav Bhaji', description: 'Buttered pav with mixed veg', price: 80, icon: '🍔' },
+    { id: 37, name: 'Sabudana Khichdi', description: 'Tapioca pearls with peanuts', price: 60, icon: '🍚' },
     
-    // ----- DESSERTS (Indian sweets photos) -----
-    { id: 38, name: 'Gulab Jamun', description: 'Soft milk solids in syrup (2 pcs)', price: 35, image: 'https://images.pexels.com/photos/13593255/pexels-photo-13593255.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 39, name: 'Jalebi', description: 'Crispy spiral sweet (4 pcs)', price: 40, image: 'https://images.pexels.com/photos/13593255/pexels-photo-13593255.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 40, name: 'Rava Kesari', description: 'Semolina dessert', price: 45, image: 'https://images.pexels.com/photos/13593255/pexels-photo-13593255.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 41, name: 'Ice Cream', description: 'Vanilla/Strawberry/Chocolate', price: 50, image: 'https://images.pexels.com/photos/13593255/pexels-photo-13593255.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Desserts
+    { id: 38, name: 'Gulab Jamun', description: 'Soft milk solids in syrup (2 pcs)', price: 35, icon: '🍡' },
+    { id: 39, name: 'Jalebi', description: 'Crispy spiral sweet (4 pcs)', price: 40, icon: '🥨' },
+    { id: 40, name: 'Rava Kesari', description: 'Semolina dessert', price: 45, icon: '🍮' },
+    { id: 41, name: 'Ice Cream', description: 'Vanilla/Strawberry/Chocolate', price: 50, icon: '🍦' },
     
-    // ----- SHAKES (Milkshake photos) -----
-    { id: 42, name: 'KitKat Shake', description: 'Chocolate shake with KitKat', price: 90, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 43, name: 'Oreo Shake', description: 'Oreo cookie milkshake', price: 95, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 44, name: 'Mango Shake', description: 'Fresh mango milkshake', price: 80, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 45, name: 'Strawberry Shake', description: 'Strawberry milkshake', price: 80, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
+    // Shakes
+    { id: 42, name: 'KitKat Shake', description: 'Chocolate shake with KitKat', price: 90, icon: '🥤' },
+    { id: 43, name: 'Oreo Shake', description: 'Oreo cookie milkshake', price: 95, icon: '🥤' },
+    { id: 44, name: 'Mango Shake', description: 'Fresh mango milkshake', price: 80, icon: '🥭' },
+    { id: 45, name: 'Strawberry Shake', description: 'Strawberry milkshake', price: 80, icon: '🍓' },
     
-    // ----- COFFEE & TEA (Beverage photos) -----
-    { id: 46, name: 'Filter Coffee', description: 'South Indian style coffee', price: 25, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 47, name: 'Masala Chai', description: 'Spiced tea with ginger', price: 20, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 48, name: 'Cold Coffee', description: 'Chilled coffee with ice cream', price: 60, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 49, name: 'Green Tea', description: 'Healthy green tea', price: 25, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' },
-    { id: 50, name: 'Badam Milk', description: 'Rich almond milk', price: 40, image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400' }
+    // Coffee & Tea
+    { id: 46, name: 'Filter Coffee', description: 'South Indian style coffee', price: 25, icon: '☕' },
+    { id: 47, name: 'Masala Chai', description: 'Spiced tea with ginger', price: 20, icon: '🫖' },
+    { id: 48, name: 'Cold Coffee', description: 'Chilled coffee with ice cream', price: 60, icon: '🥤' },
+    { id: 49, name: 'Green Tea', description: 'Healthy green tea', price: 25, icon: '🍵' },
+    { id: 50, name: 'Badam Milk', description: 'Rich almond milk', price: 40, icon: '🥛' }
 ];
 
 // ========== LOAD MENU ITEMS ==========
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'menu-item';
                 itemDiv.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" loading="lazy" style="width:100%; height:180px; object-fit:cover; border-radius:8px;">
+                    <div class="item-icon">${item.icon}</div>
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
                     <p class="price">₹${item.price}</p>
@@ -144,7 +144,7 @@ function showLoginPopup(item) {
         popup.innerHTML = `
             <div class="popup-content">
                 <div class="popup-header">
-                    <h3>🔐 Login Required</h3>
+                    <h3>Login Required</h3>
                     <button class="close-popup">&times;</button>
                 </div>
                 <div class="popup-body">
@@ -186,7 +186,7 @@ function checkPendingItem() {
         const item = JSON.parse(pendingItem);
         addToCart(item);
         sessionStorage.removeItem('pendingItem');
-        alert(`✅ ${item.name} added to cart!`);
+        alert(`${item.name} added to cart!`);
     }
 }
 
@@ -242,7 +242,7 @@ function displayCartItems() {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'cart-item';
         itemDiv.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-icon">${item.icon || '🍽️'}</div>
             <div class="cart-item-details">
                 <h4>${item.name}</h4>
                 <p>₹${item.price} each</p>
@@ -345,7 +345,7 @@ if (document.getElementById('login-form')) {
         if (email && password) {
             const name = email.split('@')[0];
             localStorage.setItem('loggedInUser', name);
-            document.getElementById('login-message').textContent = '✅ Login successful! Redirecting...';
+            document.getElementById('login-message').textContent = 'Login successful! Redirecting...';
             
             setTimeout(() => {
                 const pendingItem = sessionStorage.getItem('pendingItem');
@@ -373,7 +373,7 @@ function updateUIForLogin() {
         if (loginLink) loginLink.style.display = 'none';
         if (userGreeting) {
             userGreeting.style.display = 'block';
-            userGreeting.textContent = `👋 Welcome, ${user}!`;
+            userGreeting.textContent = `Welcome, ${user}!`;
         }
         if (heroLogin) heroLogin.style.display = 'none';
         if (heroOrder) heroOrder.style.display = 'inline-block';
