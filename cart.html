@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart - AG's CAFE</title>
+    <title>AG's Cafe - Cart</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">☕ AG's CAFE</div>
+    <nav class="slide-down">
+        <div class="logo pulse">☕ AG's Cafe</div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="login.html" id="login-link">Login</a></li>
-            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="login.html" class="nav-link" id="login-link">Login</a></li>
+            <li><a href="cart.html" class="nav-link active cart-icon">Cart (<span id="cart-count">0</span>)</a></li>
         </ul>
-        <div id="user-greeting" class="user-greeting"></div>
+        <div id="user-greeting" class="user-greeting glow"></div>
     </nav>
 
-    <main class="cart-page">
-        <h2>Your Cart</h2>
+    <main class="cart-page fade-in">
+        <h2 class="section-title text-pop-up">Your Cart</h2>
         <div id="cart-items"></div>
-        <div class="cart-total">
+        <div class="cart-total slide-in-left">
             <strong>Total: ₹<span id="cart-total">0</span></strong>
         </div>
 
-        <div id="payment-section" style="display: none;">
+        <div id="payment-section" style="display: none;" class="zoom-in">
             <h3>Select Payment Method</h3>
             <div class="payment-options">
-                <button class="btn payment-btn" data-method="cash">Cash</button>
-                <button class="btn payment-btn" data-method="gpay">Google Pay</button>
-                <button class="btn payment-btn" data-method="phonepe">PhonePe</button>
+                <button class="btn payment-btn pulse" data-method="cash">Cash</button>
+                <button class="btn payment-btn pulse" data-method="gpay">Google Pay</button>
+                <button class="btn payment-btn pulse" data-method="phonepe">PhonePe</button>
             </div>
-            <div id="qr-section" style="display: none; text-align: center;">
-                <img src="" alt="QR Code" style="width:200px; height:200px; margin:20px auto;">
+            <div id="qr-section" style="display: none; text-align: center;" class="fade-in">
+                <img src="" alt="QR Code" style="width:200px; height:200px; margin:20px auto;" class="rotate-in">
                 <p>Scan to pay via UPI</p>
-                <p id="thankyou-message"></p>
+                <p id="thankyou-message" class="glow"></p>
             </div>
-            <div id="cash-message" style="display: none; text-align: center;">
+            <div id="cash-message" style="display: none; text-align: center;" class="fade-in">
                 <p>Thank you! Please pay at the counter.</p>
             </div>
         </div>
 
-        <button id="checkout-btn" class="btn">Proceed to Checkout</button>
+        <button id="checkout-btn" class="btn btn-primary pulse">Proceed to Checkout</button>
     </main>
 
-    <footer>
-        <p>&copy; 2025 AG's CAFE. All rights reserved.</p>
+    <footer class="fade-in">
+        <p>&copy; 2025 AG's Cafe. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
